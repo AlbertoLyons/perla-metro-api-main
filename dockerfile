@@ -16,4 +16,4 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/sdk:9.0
 WORKDIR /main-api-app
 COPY --from=build /main-api-app/out .
-ENTRYPOINT ["dotnet", "perla-metro-main-api.dll"]
+ENTRYPOINT ["dotnet", "perla-metro-api-main.dll"]
