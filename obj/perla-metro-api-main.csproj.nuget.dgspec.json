@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alberto\\Desktop\\informatica\\perla-metro-api-main\\perla-metro-api-main.csproj": {}
+    "C:\\Users\\Alberto\\Desktop\\informatica\\Taller arqui\\perla-metro-api-main\\perla-metro-api-main.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alberto\\Desktop\\informatica\\perla-metro-api-main\\perla-metro-api-main.csproj": {
+    "C:\\Users\\Alberto\\Desktop\\informatica\\Taller arqui\\perla-metro-api-main\\perla-metro-api-main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alberto\\Desktop\\informatica\\perla-metro-api-main\\perla-metro-api-main.csproj",
+        "projectUniqueName": "C:\\Users\\Alberto\\Desktop\\informatica\\Taller arqui\\perla-metro-api-main\\perla-metro-api-main.csproj",
         "projectName": "perla-metro-api-main",
-        "projectPath": "C:\\Users\\Alberto\\Desktop\\informatica\\perla-metro-api-main\\perla-metro-api-main.csproj",
+        "projectPath": "C:\\Users\\Alberto\\Desktop\\informatica\\Taller arqui\\perla-metro-api-main\\perla-metro-api-main.csproj",
         "packagesPath": "C:\\Users\\Alberto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alberto\\Desktop\\informatica\\perla-metro-api-main\\obj\\",
+        "outputPath": "C:\\Users\\Alberto\\Desktop\\informatica\\Taller arqui\\perla-metro-api-main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alberto\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,6 +44,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
             "Ocelot": {
               "target": "Package",
               "version": "[24.0.1, )"
