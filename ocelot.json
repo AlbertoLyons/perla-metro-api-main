@@ -2,7 +2,7 @@
     "Routes": [
         {
             "RouteName": "perla-metro-user-service",
-            "DownstreamPathTemplate": "/api/user/{id}",
+            "DownstreamPathTemplate": "/api/{everything}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
                 {
