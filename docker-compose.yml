@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  route-service:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - API_KEY=${API_KEY}
+      - JWT_SIGNING_KEY=${JWT_SIGNING_KEY}
+      - JWT_ISSUER=${JWT_ISSUER}
+      - JWT_AUDIENCE=${JWT_AUDIENCE}
