@@ -33,11 +33,11 @@
             "_note2": "Only Admins can DELETE or GET all routes",
             "RouteName": "perla-metro-route-service",
             "DownstreamPathTemplate": "/api/route",
-            "DownstreamScheme": "http",
+            "DownstreamScheme": "https",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
-                    "Port": 5003
+                    "Host": "perla-metro-route-service.onrender.com",
+                    "Port": 443
                 }
             ],
             "UpstreamPathTemplate": "/route-service/route",
@@ -53,11 +53,11 @@
         {
             "RouteName": "perla-metro-route-service",
             "DownstreamPathTemplate": "/api/route/{id}",
-            "DownstreamScheme": "http",
+            "DownstreamScheme": "https",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
-                    "Port": 5003
+                    "Host": "perla-metro-route-service.onrender.com",
+                    "Port": 443
                 }
             ],
             "UpstreamPathTemplate": "/route-service/route/{id}",
@@ -74,11 +74,11 @@
             "_note3": "Connects to the Route Service without jwt restriction",
             "RouteName": "perla-metro-route-service",
             "DownstreamPathTemplate": "/api/route/{id}",
-            "DownstreamScheme": "http",
+            "DownstreamScheme": "https",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
-                    "Port": 5003
+                    "Host": "perla-metro-route-service.onrender.com",
+                    "Port": 443
                 }
             ],
             "UpstreamPathTemplate": "/route-service/route/{id}",
