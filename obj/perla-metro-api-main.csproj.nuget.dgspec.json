@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alberto\\Desktop\\informatica\\Taller arqui\\perla-metro-api-main\\perla-metro-api-main.csproj": {}
+    "C:\\Users\\rauli\\OneDrive\\Escritorio\\main\\perla-metro-api-main\\perla-metro-api-main.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alberto\\Desktop\\informatica\\Taller arqui\\perla-metro-api-main\\perla-metro-api-main.csproj": {
+    "C:\\Users\\rauli\\OneDrive\\Escritorio\\main\\perla-metro-api-main\\perla-metro-api-main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alberto\\Desktop\\informatica\\Taller arqui\\perla-metro-api-main\\perla-metro-api-main.csproj",
+        "projectUniqueName": "C:\\Users\\rauli\\OneDrive\\Escritorio\\main\\perla-metro-api-main\\perla-metro-api-main.csproj",
         "projectName": "perla-metro-api-main",
-        "projectPath": "C:\\Users\\Alberto\\Desktop\\informatica\\Taller arqui\\perla-metro-api-main\\perla-metro-api-main.csproj",
-        "packagesPath": "C:\\Users\\Alberto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alberto\\Desktop\\informatica\\Taller arqui\\perla-metro-api-main\\obj\\",
+        "projectPath": "C:\\Users\\rauli\\OneDrive\\Escritorio\\main\\perla-metro-api-main\\perla-metro-api-main.csproj",
+        "packagesPath": "C:\\Users\\rauli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rauli\\OneDrive\\Escritorio\\main\\perla-metro-api-main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alberto\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\rauli\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -76,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
