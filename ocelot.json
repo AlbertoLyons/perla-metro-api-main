@@ -1,20 +1,6 @@
 {
     "Routes": [
         {
-            "_note": "Connects to the User Service",
-            "RouteName": "perla-metro-user-service",
-            "DownstreamPathTemplate": "/api/{everything}",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "localhost",
-                    "Port": 5001
-                }
-            ],
-            "UpstreamPathTemplate": "/user-service/{everything}",
-            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
-        },
-        {
             "_note": "Connects to the Ticket Service",
             "RouteName": "perla-metro-ticket-service",
             "DownstreamPathTemplate": "/api/ticket/{id}",
@@ -83,6 +69,136 @@
             ],
             "UpstreamPathTemplate": "/route-service/route/{id}",
             "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+        },
+        {
+            "_note": "Connects to the User Service",
+            "_note2": "Only Admins can DELETE or GET all users",
+            "RouteName": "perla-metro-user-service",
+            "DownstreamPathTemplate": "/api/UserManagement/users",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "perla-metro-users-service-k4mp.onrender.com",
+                    "Port": 443
+                }
+            ],
+            "UpstreamPathTemplate": "/user-service/UserManagement/users",
+            "UpstreamHttpMethod": [ "GET" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "JwtBearer",
+                "AllowedScopes": []
+            },
+            "RouteClaimsRequirement": {
+                "role": ["Admin"]
+            }
+        },
+        {
+            "RouteName": "perla-metro-user-service",
+            "DownstreamPathTemplate": "/api/UserManagement/user/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "perla-metro-users-service-k4mp.onrender.com",
+                    "Port": 443
+                }
+            ],
+            "UpstreamPathTemplate": "/user-service/UserManagement/user/{id}",
+            "UpstreamHttpMethod": [ "DELETE" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "JwtBearer",
+                "AllowedScopes": []
+            },
+            "RouteClaimsRequirement": {
+                "role": ["Admin"]
+            }
+        },
+        {
+            "RouteName": "perla-metro-user-service",
+            "DownstreamPathTemplate": "/api/UserManagement/user/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "perla-metro-users-service-k4mp.onrender.com",
+                    "Port": 443
+                }
+            ],
+            "UpstreamPathTemplate": "/user-service/UserManagement/user/{id}",
+            "UpstreamHttpMethod": [ "GET" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "JwtBearer",
+                "AllowedScopes": []
+            },
+            "RouteClaimsRequirement": {
+                "role": ["Admin"]
+            }
+        },
+        {
+            "_note3": "Connects to the User Service without jwt restriction",
+            "RouteName": "perla-metro-user-service",
+            "DownstreamPathTemplate": "/api/Register/register",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "perla-metro-users-service-k4mp.onrender.com",
+                    "Port": 443
+                }
+            ],
+            "UpstreamPathTemplate": "/user-service/Register/register",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "_note3": "Connects to the User Service without jwt restriction",
+            "RouteName": "perla-metro-user-service",
+            "DownstreamPathTemplate": "/api/Auth/login",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "perla-metro-users-service-k4mp.onrender.com",
+                    "Port": 443
+                }
+            ],
+            "UpstreamPathTemplate": "/user-service/Auth/login",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "RouteName": "perla-metro-user-service",
+            "DownstreamPathTemplate": "/api/Edit/update-profile",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "perla-metro-users-service-k4mp.onrender.com",
+                    "Port": 443
+                }
+            ],
+            "UpstreamPathTemplate": "/user-service/Edit/update-profile",
+            "UpstreamHttpMethod": [ "PUT" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "JwtBearer",
+                "AllowedScopes": []
+            },
+            "RouteClaimsRequirement": {
+                "role": ["User", "Admin"]
+            }
+        },
+        {
+            "RouteName": "perla-metro-user-service",
+            "DownstreamPathTemplate": "/api/Edit/change-password",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "perla-metro-users-service-k4mp.onrender.com",
+                    "Port": 443
+                }
+            ],
+            "UpstreamPathTemplate": "/user-service/Edit/change-password",
+            "UpstreamHttpMethod": [ "PUT" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "JwtBearer",
+                "AllowedScopes": []
+            },
+            "RouteClaimsRequirement": {
+                "role": ["User", "Admin"]
+            }
         },
         {
             "_note": "Connects to the Station Service",
