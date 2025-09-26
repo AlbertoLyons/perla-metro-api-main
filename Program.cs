@@ -6,11 +6,13 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using perla_metro_api_main.src.Handlers;
 
+// Load environment variables from .env file
 Env.Load();
-
+// Create a builder for the web application
 var builder = WebApplication.CreateBuilder(args);
-
+// Add services to the container.
 builder.Services
+    // Add Authentication with JWT Bearer
     .AddAuthentication(options =>
     {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -30,12 +32,13 @@ builder.Services
     }
 );
 
-
+// Configure Ocelot with settings from ocelot.json and environment variables
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true).AddEnvironmentVariables();
-
+// Register custom delegating handler for loading API KEY from environment variable
 builder.Services.AddTransient<OcelotConfigure>();
-
+// Add Ocelot services
 var ocelotBuilder = builder.Services.AddOcelot(builder.Configuration);
+// Register the custom delegating handler with Ocelot
 ocelotBuilder.AddDelegatingHandler<OcelotConfigure>(true);
 
 builder.Logging.ClearProviders();
