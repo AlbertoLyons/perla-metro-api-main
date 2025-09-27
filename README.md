@@ -124,3 +124,163 @@ Esta ruta está protegida por autenticación, en la que solo el administrador pu
 ```bash
 https://perla-metro-api-main.onrender.com/route-service/route
 ```
+## Módulo stations-service
+
+El módulo de estaciones está desplegado en el siguiente endpoint:
+
+```bash
+https://perla-metro-stations-service-api.onrender.com
+```
+
+Para realizar consultas desde la API MAIN, se debe usar la siguiente ruta base según el nivel de acceso requerido:
+
+## Rutas de acceso
+
+### Rutas Públicas (Sin autenticación)
+
+```bash
+https://perla-metro-api-main.onrender.com/station-service/public/stations
+```
+
+### Rutas Protegidas (Solo Administradores)
+
+```bash
+https://perla-metro-api-main.onrender.com/station-service/stations
+```
+
+Se debe especificar la x-api-key como header para poder realizar las peticiones HTTP.
+
+## Endpoints disponibles
+
+### 1.- Obtener todas las estaciones (Método GET)
+
+### Ruta desde API MAIN:
+
+```bash
+https://perla-metro-api-main.onrender.com/station-service/public/stations
+```
+
+### Ruta directa:
+
+```bash
+https://perla-metro-stations-service-api.onrender.com/api/Stations
+```
+
+Esta ruta está protegida por autenticación JWT. Solo usuarios con el rol de Administrador
+pueden acceder.
+
+
+### 2.- Crear nueva estación (Método POST)
+
+### Ruta desde API MAIN:
+
+```bash
+https://perla-metro-api-main.onrender.com/station-service/public/stations
+```
+
+### Ruta directa:
+
+```bash
+https://perla-metro-stations-service-api.onrender.com/api/Stations
+```
+Esta ruta no está protegida por autenticación.
+
+### Parámetros en el body:
+
+- name: Nombre de la estación.
+- location: Ubicación de la estación
+- type: Tipo de estación. Debe ser un entero (1=Origen, 2=Destino, 3=Intermedia)
+
+### Ejemplo de body:
+
+```json
+{
+  "name": "CEDUC",
+  "location": "Ramón Freire 01416, Antofagasta",
+  "type": 2
+}
+```
+
+### Obtener estación por ID (Método GET)
+
+### Ruta desde API MAIN:
+
+```bash
+https://perla-metro-api-main.onrender.com/station-service/public/stations/{id}
+```
+
+### Ruta directa:
+
+```bash
+https://perla-metro-stations-service-api.onrender.com/api/Stations/{id}
+```
+Esta ruta no está protegida por autenticación.
+
+### Parámetros de ruta:
+
+- id: ID numérico de la estación (entero positivo)
+
+### Actualizar estación (Método PUT)
+
+### Ruta desde API MAIN:
+
+```bash
+https://perla-metro-api-main.onrender.com/station-service/public/stations/{id}
+```
+
+### Ruta directa:
+
+```bash
+https://perla-metro-stations-service-api.onrender.com/api/Stations/{id}
+```
+Esta ruta no está protegida por autenticación.
+
+### Parámetros de ruta:
+
+- id: ID numérico de la estación a actualizar (entero positivo)
+
+### Parámetros en el body:
+
+- name: Nuevo nombre de la estación.
+- location: Nueva ubicación de la estación
+- type: Tipo de estación. Debe ser un entero (1=Origen, 2=Destino, 3=Intermedia)
+- isActive: Estado de la estación (true/false)
+
+### Ejemplo de body:
+
+```json
+{
+  "name": "Casino Enjoy",
+  "location": "Av. Angamos 01455, Antofagasta",
+  "type": 1,
+  "isActive": true
+}
+```
+
+### Eliminar estación (Método DELETE)
+
+### Ruta desde API MAIN:
+
+```bash
+https://perla-metro-api-main.onrender.com/station-service/public/stations/{id}
+```
+
+### Ruta directa:
+
+```bash
+https://perla-metro-stations-service-api.onrender.com/api/Stations/{id}
+```
+Esta ruta no está protegida por autenticación.
+
+### Parámetros de ruta:
+
+- id: ID numérico de la estación a eliminar (entero positivo)
+
+La estación se marca como inactiva pero no se elimina físicamete de la base de datos para mantener trazabilidad.
+
+## Consideraciones importantes
+
+1. Nombres únicos: No se pueden crear dos estaciones con el mismo nombre.
+2. Soft Delete: Las estaciones eliminadas se marcan como inactivas, no se borran.
+3. El tipo solo puede ser un valor entero con valores: (1=Origen, 2=Destino, 3=Intermedia)
+   
