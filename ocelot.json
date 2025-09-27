@@ -203,7 +203,7 @@
         {
             "_note": "Connects to the Station Service - GET all stations Protected",
             "RouteName": "perla-metro-stations-service",
-            "DownstreamPathTemplate": "/api/Station",
+            "DownstreamPathTemplate": "/api/Stations",
             "DownstreamScheme": "https",
             "DownstreamHostAndPorts": [
                 {
@@ -224,7 +224,7 @@
         {
             "_note3": "Connects to the Station Service - POST station",
             "RouteName": "perla-metro-stations-service",
-            "DownstreamPathTemplate": "/api/Station",
+            "DownstreamPathTemplate": "/api/Stations",
             "DownstreamScheme": "https",
             "DownstreamHostAndPorts": [
                 {
@@ -239,7 +239,7 @@
         {
             "_note3": "Connect to the Station Service - GET, PUT and DELETE for a unique ID",
             "RouteName": "perla-metro-stations-service",
-            "DownstreamPathTemplate": "/api/Station/{id}",
+            "DownstreamPathTemplate": "/api/Stations/{id}",
             "DownstreamScheme": "https",
             "DownstreamHostAndPorts": [
                 {
