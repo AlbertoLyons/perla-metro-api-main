@@ -150,6 +150,11 @@ https://perla-metro-api-main.onrender.com/station-service/stations
 
 Se debe especificar la x-api-key como header para poder realizar las peticiones HTTP.
 
+## Consultas POSTMAN
+
+Las consultas disponibles en el módulo son las siguientes (Se adjunta una colección de postman en el repositorio para un mayor entendimiento.):
+[Colección de postman del módulo stations](Station-service.postman_collection.json)
+
 ## Endpoints disponibles
 
 ### 1.- Obtener todas las estaciones (Método GET)
@@ -157,7 +162,7 @@ Se debe especificar la x-api-key como header para poder realizar las peticiones 
 ### Ruta desde API MAIN:
 
 ```bash
-https://perla-metro-api-main.onrender.com/station-service/public/stations
+https://perla-metro-api-main.onrender.com/station-service/stations
 ```
 
 ### Ruta directa:
@@ -280,7 +285,6 @@ La estación se marca como inactiva pero no se elimina físicamete de la base de
 
 ## Consideraciones importantes
 
-1. Nombres únicos: No se pueden crear dos estaciones con el mismo nombre.
-2. Soft Delete: Las estaciones eliminadas se marcan como inactivas, no se borran.
-3. El tipo solo puede ser un valor entero con valores: (1=Origen, 2=Destino, 3=Intermedia)
+1. Soft Delete: Las estaciones eliminadas se marcan como inactivas, no se borran.
+2. El tipo solo puede ser un valor entero con valores: (1=Origen, 2=Destino, 3=Intermedia)
    
