@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "14fd9ac2-b8c5-4012-ae6c-e377ad72e7e3",
+		"name": "Station service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35088823",
+		"_collection_link": "https://ww4444-5530.postman.co/workspace/Arqui~001470f1-c5c2-4292-b156-4e00e52b71d7/collection/35088823-14fd9ac2-b8c5-4012-ae6c-e377ad72e7e3?action=share&source=collection_link&creator=35088823"
+	},
+	"item": [
+		{
+			"name": "GET a single station ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{MAIN_API_URL}}station-service/public/stations/2",
+					"host": [
+						"{{MAIN_API_URL}}station-service"
+					],
+					"path": [
+						"public",
+						"stations",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a station",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Mi casa 3\",\r\n  \"location\": \"Oviedo cavada, Antofagasta\",\r\n  \"type\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{MAIN_API_URL}}station-service/public/stations",
+					"host": [
+						"{{MAIN_API_URL}}station-service"
+					],
+					"path": [
+						"public",
+						"stations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a station",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Casino Enjoy\",\r\n  \"location\": \"Av. Angamos 01455, Antofagasta\",\r\n  \"type\": 1,\r\n  \"isActive\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{MAIN_API_URL}}station-service/public/stations/8",
+					"host": [
+						"{{MAIN_API_URL}}station-service"
+					],
+					"path": [
+						"public",
+						"stations",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a station",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{MAIN_API_URL}}station-service/public/stations/10",
+					"host": [
+						"{{MAIN_API_URL}}station-service"
+					],
+					"path": [
+						"public",
+						"stations",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all stations",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWT_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{MAIN_API_URL}}station-service/stations",
+					"host": [
+						"{{MAIN_API_URL}}station-service"
+					],
+					"path": [
+						"stations"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
