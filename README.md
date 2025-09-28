@@ -287,4 +287,187 @@ La estación se marca como inactiva pero no se elimina físicamete de la base de
 
 1. Soft Delete: Las estaciones eliminadas se marcan como inactivas, no se borran.
 2. El tipo solo puede ser un valor entero con valores: (1=Origen, 2=Destino, 3=Intermedia)
+
+
+## Módulo user-service
+
+El módulo de usuarios está desplegado en el siguiente endpoint:
+
+```bash
+https://perla-metro-users-service-k4mp.onrender.com
+```
+
+Para realizar consultas desde la API MAIN, se debe usar la siguiente ruta base según el nivel de acceso requerido:
+
+## Rutas de acceso
+
+### Rutas Protegidas (Solo Administradores)
+
+```bash
+https://perla-metro-api-main.onrender.com/user-service/UserManagement
+```
+
+Se debe especificar la x-api-key como header para poder realizar las peticiones HTTP.
+
+## Consultas POSTMAN
+
+Las consultas disponibles en el módulo son las siguientes (Se adjunta una colección de postman en el repositorio para un mayor entendimiento.):
+[Colección de postman del módulo users](User.postman_collection.json)
+
+## Endpoints disponibles
+
+### 1.- Iniciar Sesion (Método POST)
+
+### Ruta desde API MAIN:
+
+```bash
+https://perla-metro-api-main.onrender.com/user-service/Auth/login
+```
+
+### Ruta directa:
+
+```bash
+https://perla-metro-users-service-k4mp.onrender.com/api/Auth/login
+```
+Esta ruta no está protegida por autenticación.
+
+### 2.- Registrarse (Método POST)
+
+### Ruta desde API MAIN:
+
+```bash
+https://perla-metro-api-main.onrender.com/user-service/Register/register
+```
+
+### Ruta directa:
+
+```bash
+https://perla-metro-users-service-k4mp.onrender.com/api/Register/register
+```
+Esta ruta no está protegida por autenticación.
+
+### Parámetros en el body:
+
+- name: Nombre de la persona.
+- lastname: Apellido de la persona
+- email: Correo de la persona
+- password: Contraseña de la persona
+
+### Ejemplo de body:
+
+```json
+{
+  "firstName": "Pedro",
+  "lastName": "Arauco",
+  "email": "pedro@perlametro.cl",
+  "password": "Pedro01$"
+}
+```
+
+### Editar Perfil (Método PUT)
+
+### Ruta desde API MAIN:
+
+```bash
+https://perla-metro-api-main.onrender.com/user-service/Edit/update-profile
+```
+
+### Ruta directa:
+
+```bash
+https://perla-metro-users-service-k4mp.onrender.com/api/Edit/update-profile
+```
+Esta ruta está protegida por autenticación JWT. Solo usuarios con el rol de Administrador y Usuario
+pueden acceder.
+
+### Parámetros de ruta:
+
+- name: Nombre de la persona.
+- lastname: Apellido de la persona
+- email: Correo de la persona
+
+### Cambiar Contraseña (Método PUT)
+
+### Ruta desde API MAIN:
+
+```bash
+https://perla-metro-api-main.onrender.com/user-service/Edit/change-password
+```
+
+### Ruta directa:
+
+```bash
+https://perla-metro-users-service-k4mp.onrender.com/api/Edit/change-password
+```
+Esta ruta está protegida por autenticación JWT. Solo usuarios con el rol de Administrador y Usuario
+pueden acceder.
+
+### Parámetros en el body:
+
+- currentPassword: Contraseña actual
+- newPassword: Contraseña nueva
+
+
+### Obtener a todos los usuarios (Método GET)
+
+### Ruta desde API MAIN:
+
+```bash
+https://perla-metro-api-main.onrender.com/user-service/UserManagement/users
+```
+
+### Ruta directa:
+
+```bash
+https://perla-metro-users-service-k4mp.onrender.com/api/UserManagement/users
+```
+Esta ruta está protegida por autenticación JWT. Solo usuarios con el rol de Administrador
+pueden acceder.
+
+### Obtener usuario por ID (Método GET)
+
+### Ruta desde API MAIN:
+
+```bash
+https://perla-metro-api-main.onrender.com/user-service/UserManagement/user/{id}
+```
+
+### Ruta directa:
+
+```bash
+https://perla-metro-users-service-k4mp.onrender.com/api/UserManagement/user/{id}
+```
+Esta ruta está protegida por autenticación JWT. Solo usuarios con el rol de Administrador
+pueden acceder.
+
+### Parámetros de ruta:
+
+- id: ID UUID v4
+
+### Eliminar Usuario (Método DELETE)
+
+### Ruta desde API MAIN:
+
+```bash
+https://perla-metro-api-main.onrender.com/user-service/UserManagement/user/{id}
+```
+
+### Ruta directa:
+
+```bash
+https://perla-metro-users-service-k4mp.onrender.com/api/UserManagement/user/{id}
+```
+Esta ruta está protegida por autenticación JWT. Solo usuarios con el rol de Administrador
+pueden acceder.
+
+### Parámetros de ruta:
+
+- id: ID UUID v4
+
+El usuario se marca como inactivo pero no se elimina físicamete de la base de datos para mantener trazabilidad.
+
+
+## Consideraciones importantes
+
+1. Soft Delete: Los usuarios eliminados se marcan como inactivos, no se borran.
    
