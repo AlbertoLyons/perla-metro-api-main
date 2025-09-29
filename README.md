@@ -470,4 +470,73 @@ El usuario se marca como inactivo pero no se elimina físicamete de la base de d
 ## Consideraciones importantes
 
 1. Soft Delete: Los usuarios eliminados se marcan como inactivos, no se borran.
+
+
+# Módulo Tickets Service
+
+### Crear ticket (Metodo POST)
+
+Este metodo permite crear un nuevo ticket dando los siguientes parametros en el body:
+- TicketId: Id unico del ticket. Debe de ser un string.
+- PassengerId: Id unico del usuario creador del ticket. Debe de ser un string.
+- EmissionDate: Fehca y hora de emisión del ticket. Debe de ser en formato TimeSpan (Ejemplo 12:00:00, donde cumple la regla de HH:MM:SS).
+- TicketType: Tipo de ticket. Puede ser de ida o vuelta.
+- Status: El estado actual del ticket. Puede ser activo, usado, caducado o inactivo
+- AmountPaid: Cantidad total pagada del ticket
+- IsActive: Verifica si el ticket está activo. Debe ser un valor booleano true o false.
+
+Ruta a usar: 
+```bash
+https://ticket-service-ach6.onrender.com/ticket-service/ticket
+```
+
+### Obtener tickets (Metodo GET)
+
+Este metodo permite obtener todos los tickes existentes, estén desactivados o no.
+
+Solo el administrador puede acceder a este endpoint.
+
+Ruta a usar: 
+```bash
+https://ticket-service-ach6.onrender.com/ticket-service/ticket
+```
+
+### Obtener ticket por id (Metodo GET)
+
+Este metodo permite obtener un ticket dado su id como parametro. Si el ticket esta desactivado o no existe, no se podrá mostrar información sobre esta, arrojando un estado 404.
+
+Ruta a usar: 
+```bash
+https://ticket-service-ach6.onrender.com/ticket-service/ticket/{id}
+```
+Se debe de colocar el id del ticket a obtener.
+
+### Actualizar ticket (Metodo PUT)
+
+Este metodo permite editar un ticket dando como párametro su id. Los párametros que deben de ir en el body son los siguientes:
+- TicketId: Id unico del ticket. Debe de ser un string.
+- PassengerId: Id unico del usuario creador del ticket. Debe de ser un string.
+- EmissionDate: Fehca y hora de emisión del ticket. Debe de ser en formato TimeSpan (Ejemplo 12:00:00, donde cumple la regla de HH:MM:SS).
+- TicketType: Tipo de ticket. Puede ser de ida o vuelta.
+- Status: El estado actual del ticket. Puede ser activo, usado, caducado o inactivo
+- AmountPaid: Cantidad total pagada del ticket
+- IsActive: Verifica si el ticket está activo. Debe ser un valor booleano true o false.
+
+Ruta a usar: 
+```bash
+https://ticket-service-ach6.onrender.com/ticket-service/ticket/{id}
+```
+Se debe de colocar el id del ticket a actualizar.
+
+### Eliminar ticket (Metodo DELETE)
+
+Este metodo permite la eliminiación de una ticket mediante el uso de soft delete. Se debe de dar la id del ticket como párametro.
+
+Solo el administrador puede acceder a este endpoint y los tickets solo se vuelven inactivos, no se borran.
+
+Ruta a usar: 
+```bash
+https://ticket-service-ach6.onrender.com/ticket-service/ticket/{id}
+```
+Se debe de colocar el id del ticket a eliminar.
    
