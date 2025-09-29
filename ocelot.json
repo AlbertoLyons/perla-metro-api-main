@@ -1,18 +1,32 @@
 {
     "Routes": [
         {
-            "_note": "Connects to the Ticket Service",
+            "_note": "Connects to the Ticket Service (all tickets)",
             "RouteName": "perla-metro-ticket-service",
-            "DownstreamPathTemplate": "/api/ticket/{id}",
-            "DownstreamScheme": "http",
+            "DownstreamPathTemplate": "/api/ticket",
+            "DownstreamScheme": "https",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
-                    "Port": 5002
+                    "Host": "ticket-service-ach6.onrender.com",
+                    "Port": 443
+                }
+            ],
+            "UpstreamPathTemplate": "/ticket-service/ticket",
+            "UpstreamHttpMethod": [ "GET", "POST" ]
+        },
+        {
+            "_note": "Connects to the Ticket Service (ticket by id)",
+            "RouteName": "perla-metro-ticket-service",
+            "DownstreamPathTemplate": "/api/ticket/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                "Host": "ticket-service-ach6.onrender.com",
+                "Port": 443
                 }
             ],
             "UpstreamPathTemplate": "/ticket-service/ticket/{id}",
-            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+            "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ]
         },
         {
             "_note": "Connects to the Route Service",
@@ -201,18 +215,54 @@
             }
         },
         {
-            "_note": "Connects to the Station Service",
+            "_note": "Connects to the Station Service - GET all stations Protected",
             "RouteName": "perla-metro-stations-service",
-            "DownstreamPathTemplate": "/api/station/{id}",
-            "DownstreamScheme": "http",
+            "DownstreamPathTemplate": "/api/Stations",
+            "DownstreamScheme": "https",
             "DownstreamHostAndPorts": [
                 {
-                    "Host": "localhost",
-                    "Port": 5004
+                    "Host": "perla-metro-stations-service-api.onrender.com",
+                    "Port": 443
                 }
             ],
-            "UpstreamPathTemplate": "/station-service/station/{id}",
-            "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+            "UpstreamPathTemplate": "/station-service/stations",
+            "UpstreamHttpMethod": [ "GET"],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "JwtBearer",
+                "AllowedScopes": []
+            },
+            "RouteClaimsRequirement": {
+                "role": ["Admin"]
+            }
+        },
+        {
+            "_note3": "Connects to the Station Service - POST station",
+            "RouteName": "perla-metro-stations-service",
+            "DownstreamPathTemplate": "/api/Stations",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "perla-metro-stations-service-api.onrender.com",
+                    "Port": 443
+                }
+            ],
+            "UpstreamPathTemplate": "/station-service/public/stations",
+            "UpstreamHttpMethod": [ "POST"]
+
+        },
+        {
+            "_note3": "Connect to the Station Service - GET, PUT and DELETE for a unique ID",
+            "RouteName": "perla-metro-stations-service",
+            "DownstreamPathTemplate": "/api/Stations/{id}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "perla-metro-stations-service-api.onrender.com",
+                    "Port": 443
+                }
+            ],
+            "UpstreamPathTemplate": "/station-service/public/stations/{id}",
+            "UpstreamHttpMethod": [ "GET", "PUT", "DELETE"]
         }
     ]
 }

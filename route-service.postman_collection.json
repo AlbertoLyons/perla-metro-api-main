@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "7943d586-7828-492d-b25c-6e74ea477dec",
+		"name": "Routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34959437"
+	},
+	"item": [
+		{
+			"name": "Add Route",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"OriginStation\": \"Edmundo Perez Zujovic\",\r\n    \"DestinationStation\": \"Gran Via\",\r\n    \"DepartureTime\": \"14:30:00\",\r\n    \"ArrivalTime\": \"16:30:00\",\r\n    \"InterludeTimes\": [\"14:45:00\", \"15:15:00\"],\r\n    \"IsActive\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{MAIN_API_URL}}route-service/route",
+					"host": [
+						"{{MAIN_API_URL}}route-service"
+					],
+					"path": [
+						"route"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Route 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"OriginStation\": \"Edmundo Perez Zujovic\",\r\n    \"DestinationStation\": \"Gran Via\",\r\n    \"DepartureTime\": \"14:30:00\",\r\n    \"ArrivalTime\": \"16:30:00\",\r\n    \"InterludeTimes\": [\"14:45:00\", \"15:15:00\"],\r\n    \"IsActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MAIN_API_URL}}route-service/route",
+							"host": [
+								"{{MAIN_API_URL}}route-service"
+							],
+							"path": [
+								"route"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Sep 2025 15:52:08 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "34078669-c618-4351"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9853ed33daaee7a1-SCL"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"7a41df7b-8d4f-4d58-b094-a5cbf8734b49\",\n    \"originStation\": \"Edmundo Perez Zujovic\",\n    \"destinationStation\": \"Gran Via\",\n    \"departureTime\": \"14:30:00\",\n    \"arrivalTime\": \"16:30:00\",\n    \"interludeTimes\": [\n        \"14:45:00\",\n        \"15:15:00\"\n    ],\n    \"isActive\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get routes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWT_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "perla-metro-api-key",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{MAIN_API_URL}}route-service/route",
+					"host": [
+						"{{MAIN_API_URL}}route-service"
+					],
+					"path": [
+						"route"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get routes 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "perla-metro-api-key",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MAIN_API_URL}}route-service/route",
+							"host": [
+								"{{MAIN_API_URL}}route-service"
+							],
+							"path": [
+								"route"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Sep 2025 15:51:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "ce20a869-67f9-4049"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9853ebacce45e7a4-SCL"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"7f1162e7-d974-4419-94ad-fc14ff77e4dc\",\n        \"originStation\": \"South Camille\",\n        \"destinationStation\": \"Cummeratafurt\",\n        \"departureTime\": \"11:31:00\",\n        \"arrivalTime\": \"18:01:00\",\n        \"interludeTimes\": [\n            \"00:50:00\",\n            \"02:30:00\",\n            \"05:59:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"ae5c9f42-a4d8-4bbe-9e61-006c9ff44a51\",\n        \"originStation\": \"Garthfort\",\n        \"destinationStation\": \"South Kameronmouth\",\n        \"departureTime\": \"01:20:00\",\n        \"arrivalTime\": \"03:09:00\",\n        \"interludeTimes\": [\n            \"23:34:00\",\n            \"20:45:00\",\n            \"17:55:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"74bda187-c07a-4408-966b-03dd982b6e1c\",\n        \"originStation\": \"Lake Lavon\",\n        \"destinationStation\": \"Johnsonborough\",\n        \"departureTime\": \"18:48:00\",\n        \"arrivalTime\": \"03:15:00\",\n        \"interludeTimes\": [\n            \"05:46:00\",\n            \"16:17:00\",\n            \"07:36:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"1f0f31db-4add-4e2c-ab82-bc1badf04402\",\n        \"originStation\": \"East Rashadberg\",\n        \"destinationStation\": \"Zechariahchester\",\n        \"departureTime\": \"18:04:00\",\n        \"arrivalTime\": \"15:00:00\",\n        \"interludeTimes\": [\n            \"04:30:00\",\n            \"20:01:00\",\n            \"22:51:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"2e325b5e-bafd-4b74-bd17-bc8deb8dd3d6\",\n        \"originStation\": \"Lake Brainstad\",\n        \"destinationStation\": \"New Chris\",\n        \"departureTime\": \"17:48:00\",\n        \"arrivalTime\": \"07:03:00\",\n        \"interludeTimes\": [\n            \"23:39:00\",\n            \"20:19:00\",\n            \"08:04:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"db2a7fda-fb1c-4ee7-bd11-846878931046\",\n        \"originStation\": \"New Lukas\",\n        \"destinationStation\": \"East Laurel\",\n        \"departureTime\": \"14:18:00\",\n        \"arrivalTime\": \"11:01:00\",\n        \"interludeTimes\": [\n            \"04:31:00\",\n            \"18:10:00\",\n            \"20:40:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"95560807-c9ca-4861-a7ec-32e3bec30451\",\n        \"originStation\": \"West Vedafurt\",\n        \"destinationStation\": \"West Shaun\",\n        \"departureTime\": \"09:18:00\",\n        \"arrivalTime\": \"14:18:00\",\n        \"interludeTimes\": [\n            \"03:47:00\",\n            \"14:26:00\",\n            \"13:42:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"08addb6e-5ad0-471a-8a8f-5c299ca1b80c\",\n        \"originStation\": \"North Alvertaburgh\",\n        \"destinationStation\": \"West Helmerland\",\n        \"departureTime\": \"16:42:00\",\n        \"arrivalTime\": \"17:17:00\",\n        \"interludeTimes\": [\n            \"00:02:00\",\n            \"03:08:00\",\n            \"08:59:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"6a933267-8db5-4825-936e-26ca44815673\",\n        \"originStation\": \"Blaisestad\",\n        \"destinationStation\": \"South Warren\",\n        \"departureTime\": \"18:41:00\",\n        \"arrivalTime\": \"09:04:00\",\n        \"interludeTimes\": [\n            \"01:37:00\",\n            \"16:54:00\",\n            \"23:47:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"5df7af12-bf12-4caa-916f-a8f0646e9d89\",\n        \"originStation\": \"West Ardella\",\n        \"destinationStation\": \"Port Aliaville\",\n        \"departureTime\": \"18:04:00\",\n        \"arrivalTime\": \"09:13:00\",\n        \"interludeTimes\": [\n            \"09:42:00\",\n            \"05:48:00\",\n            \"21:45:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"4c673ccf-6055-49a6-a0d3-86f57d346218\",\n        \"originStation\": \"West Tyrellburgh\",\n        \"destinationStation\": \"Port Marvinhaven\",\n        \"departureTime\": \"03:54:00\",\n        \"arrivalTime\": \"01:14:00\",\n        \"interludeTimes\": [\n            \"07:01:00\",\n            \"11:21:00\",\n            \"00:29:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"91608601-1991-49e7-8351-36b14e569a05\",\n        \"originStation\": \"New Anabelfort\",\n        \"destinationStation\": \"East General\",\n        \"departureTime\": \"16:26:00\",\n        \"arrivalTime\": \"17:02:00\",\n        \"interludeTimes\": [\n            \"20:14:00\",\n            \"22:43:00\",\n            \"06:52:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"6181f053-b371-40d1-8475-d43818473891\",\n        \"originStation\": \"Simoneland\",\n        \"destinationStation\": \"Littelstad\",\n        \"departureTime\": \"22:37:00\",\n        \"arrivalTime\": \"03:18:00\",\n        \"interludeTimes\": [\n            \"02:55:00\",\n            \"02:15:00\",\n            \"03:17:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"a5170ce1-dcdc-4693-b9a8-a68015aefb76\",\n        \"originStation\": \"New Tabithachester\",\n        \"destinationStation\": \"Lake Jaeden\",\n        \"departureTime\": \"03:29:00\",\n        \"arrivalTime\": \"09:51:00\",\n        \"interludeTimes\": [\n            \"16:22:00\",\n            \"08:43:00\",\n            \"06:26:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"eb770771-2efa-49d6-9434-d230fc2ccada\",\n        \"originStation\": \"North Faustinoside\",\n        \"destinationStation\": \"Nolafurt\",\n        \"departureTime\": \"09:51:00\",\n        \"arrivalTime\": \"10:42:00\",\n        \"interludeTimes\": [\n            \"05:33:00\",\n            \"15:32:00\",\n            \"14:14:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"62e8945f-d873-473d-96fe-12b20da600db\",\n        \"originStation\": \"Jarrellport\",\n        \"destinationStation\": \"Port Helena\",\n        \"departureTime\": \"03:31:00\",\n        \"arrivalTime\": \"09:37:00\",\n        \"interludeTimes\": [\n            \"12:23:00\",\n            \"15:37:00\",\n            \"23:34:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"f0eaa551-ee6f-4e0f-b3e1-f1e1e9e0a4f5\",\n        \"originStation\": \"Lake Elyssashire\",\n        \"destinationStation\": \"Lake Hillary\",\n        \"departureTime\": \"21:56:00\",\n        \"arrivalTime\": \"11:45:00\",\n        \"interludeTimes\": [\n            \"09:39:00\",\n            \"01:19:00\",\n            \"05:02:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"0bd9b283-34a3-4aa8-bbce-e0520e6a80d5\",\n        \"originStation\": \"East Bettie\",\n        \"destinationStation\": \"Lakinside\",\n        \"departureTime\": \"01:47:00\",\n        \"arrivalTime\": \"04:12:00\",\n        \"interludeTimes\": [\n            \"16:55:00\",\n            \"05:30:00\",\n            \"04:10:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"37e781c7-918d-440e-83fa-ea0572da4001\",\n        \"originStation\": \"Port Jacky\",\n        \"destinationStation\": \"East Arvelton\",\n        \"departureTime\": \"16:02:00\",\n        \"arrivalTime\": \"10:36:00\",\n        \"interludeTimes\": [\n            \"07:25:00\",\n            \"19:19:00\",\n            \"23:57:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"ecbb6765-008f-4bbb-b3db-af4cb953f408\",\n        \"originStation\": \"Wendellborough\",\n        \"destinationStation\": \"Port Darrelville\",\n        \"departureTime\": \"06:35:00\",\n        \"arrivalTime\": \"06:05:00\",\n        \"interludeTimes\": [\n            \"03:24:00\",\n            \"06:48:00\",\n            \"18:09:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"b511dfa2-7d57-4b03-a5d6-514ff26541f3\",\n        \"originStation\": \"Coleville\",\n        \"destinationStation\": \"Port Adolfoton\",\n        \"departureTime\": \"02:31:00\",\n        \"arrivalTime\": \"18:15:00\",\n        \"interludeTimes\": [\n            \"05:29:00\",\n            \"06:51:00\",\n            \"19:05:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"643b5186-d7f7-4377-ad1d-9dd53c3f89d4\",\n        \"originStation\": \"Lake Emil\",\n        \"destinationStation\": \"Port Anastacio\",\n        \"departureTime\": \"18:40:00\",\n        \"arrivalTime\": \"00:47:00\",\n        \"interludeTimes\": [\n            \"10:00:00\",\n            \"07:29:00\",\n            \"23:09:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"55a3ad09-4c75-42fc-8a02-7fb80001d30c\",\n        \"originStation\": \"Kundebury\",\n        \"destinationStation\": \"Lake Zenafort\",\n        \"departureTime\": \"08:36:00\",\n        \"arrivalTime\": \"17:22:00\",\n        \"interludeTimes\": [\n            \"07:05:00\",\n            \"04:39:00\",\n            \"13:29:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"ef81976d-871f-4ce1-9f06-c040757fb3b4\",\n        \"originStation\": \"New Hiramberg\",\n        \"destinationStation\": \"Duaneside\",\n        \"departureTime\": \"15:11:00\",\n        \"arrivalTime\": \"12:11:00\",\n        \"interludeTimes\": [\n            \"17:34:00\",\n            \"12:14:00\",\n            \"20:39:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"d3517045-675d-4486-8115-5c02ed6098a5\",\n        \"originStation\": \"Trantowstad\",\n        \"destinationStation\": \"Ebertside\",\n        \"departureTime\": \"23:12:00\",\n        \"arrivalTime\": \"11:06:00\",\n        \"interludeTimes\": [\n            \"00:11:00\",\n            \"09:01:00\",\n            \"06:55:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"58f109f0-a44e-472e-8738-9e39e5e99721\",\n        \"originStation\": \"Aylinberg\",\n        \"destinationStation\": \"Wendyshire\",\n        \"departureTime\": \"17:08:00\",\n        \"arrivalTime\": \"19:58:00\",\n        \"interludeTimes\": [\n            \"20:41:00\",\n            \"20:35:00\",\n            \"21:04:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"d8075d57-650b-4651-8bd6-f8b59406b464\",\n        \"originStation\": \"Minervaberg\",\n        \"destinationStation\": \"West Alexzandermouth\",\n        \"departureTime\": \"10:13:00\",\n        \"arrivalTime\": \"20:08:00\",\n        \"interludeTimes\": [\n            \"04:04:00\",\n            \"02:40:00\",\n            \"05:46:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"92395c6e-10c4-43f4-b3fa-3a453a5f32f5\",\n        \"originStation\": \"Erdmanborough\",\n        \"destinationStation\": \"Monicaburgh\",\n        \"departureTime\": \"11:56:00\",\n        \"arrivalTime\": \"12:36:00\",\n        \"interludeTimes\": [\n            \"15:38:00\",\n            \"16:38:00\",\n            \"06:08:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"bcdfb0ea-570a-451c-adbc-f3d70047c000\",\n        \"originStation\": \"North Mossieburgh\",\n        \"destinationStation\": \"New Kyleeton\",\n        \"departureTime\": \"04:37:00\",\n        \"arrivalTime\": \"02:47:00\",\n        \"interludeTimes\": [\n            \"09:32:00\",\n            \"15:28:00\",\n            \"08:31:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"2d1141e6-5ede-4ad0-9f04-8e135bb60364\",\n        \"originStation\": \"North Camron\",\n        \"destinationStation\": \"New Peteborough\",\n        \"departureTime\": \"09:19:00\",\n        \"arrivalTime\": \"21:22:00\",\n        \"interludeTimes\": [\n            \"16:44:00\",\n            \"23:11:00\",\n            \"07:07:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"b62772a8-8292-4ded-b525-954a0ce6846d\",\n        \"originStation\": \"Drakefort\",\n        \"destinationStation\": \"Feeneyport\",\n        \"departureTime\": \"05:36:00\",\n        \"arrivalTime\": \"12:55:00\",\n        \"interludeTimes\": [\n            \"20:37:00\",\n            \"13:54:00\",\n            \"16:31:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"70513e9f-b8a3-4b50-a73d-f9ba6138b4a7\",\n        \"originStation\": \"Moseton\",\n        \"destinationStation\": \"Conradstad\",\n        \"departureTime\": \"23:51:00\",\n        \"arrivalTime\": \"05:44:00\",\n        \"interludeTimes\": [\n            \"20:06:00\",\n            \"05:34:00\",\n            \"03:38:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"803e0721-cd92-4b81-b068-6d03932bdaf7\",\n        \"originStation\": \"South Raheem\",\n        \"destinationStation\": \"Raymondstad\",\n        \"departureTime\": \"21:50:00\",\n        \"arrivalTime\": \"17:42:00\",\n        \"interludeTimes\": [\n            \"17:57:00\",\n            \"20:32:00\",\n            \"10:25:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"ff0c9b1f-d3a3-489a-b320-392a2e4b778d\",\n        \"originStation\": \"Port Emilia\",\n        \"destinationStation\": \"Malachistad\",\n        \"departureTime\": \"05:08:00\",\n        \"arrivalTime\": \"07:43:00\",\n        \"interludeTimes\": [\n            \"10:41:00\",\n            \"16:18:00\",\n            \"16:58:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"5827850f-cf6f-4e80-bf57-945db96d7aea\",\n        \"originStation\": \"Piperburgh\",\n        \"destinationStation\": \"Maryjaneside\",\n        \"departureTime\": \"11:00:00\",\n        \"arrivalTime\": \"01:52:00\",\n        \"interludeTimes\": [\n            \"18:51:00\",\n            \"21:14:00\",\n            \"04:07:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"4fbbd944-ce3b-4fc5-9cf1-ffde8c14b26f\",\n        \"originStation\": \"Jacobiburgh\",\n        \"destinationStation\": \"Lake Mariannemouth\",\n        \"departureTime\": \"11:26:00\",\n        \"arrivalTime\": \"14:31:00\",\n        \"interludeTimes\": [\n            \"12:21:00\",\n            \"15:26:00\",\n            \"06:40:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"831b4c9c-f0a8-49f2-87b1-a15b57f253eb\",\n        \"originStation\": \"West Guillermoshire\",\n        \"destinationStation\": \"Georgettetown\",\n        \"departureTime\": \"15:11:00\",\n        \"arrivalTime\": \"07:49:00\",\n        \"interludeTimes\": [\n            \"18:15:00\",\n            \"07:13:00\",\n            \"20:41:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"353037c5-08c6-416c-89ec-04873c144400\",\n        \"originStation\": \"South Roselyn\",\n        \"destinationStation\": \"Marianport\",\n        \"departureTime\": \"01:36:00\",\n        \"arrivalTime\": \"16:33:00\",\n        \"interludeTimes\": [\n            \"04:40:00\",\n            \"19:26:00\",\n            \"17:28:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"59ff46e0-922a-4f4d-97db-5ec8ff6928fa\",\n        \"originStation\": \"Lake Gaylord\",\n        \"destinationStation\": \"East Kiana\",\n        \"departureTime\": \"12:56:00\",\n        \"arrivalTime\": \"19:25:00\",\n        \"interludeTimes\": [\n            \"19:20:00\",\n            \"21:39:00\",\n            \"02:57:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"cffebfd9-b6e9-4a50-af96-dd20fdeffd3a\",\n        \"originStation\": \"Dereckburgh\",\n        \"destinationStation\": \"New Danielle\",\n        \"departureTime\": \"11:07:00\",\n        \"arrivalTime\": \"17:50:00\",\n        \"interludeTimes\": [\n            \"02:14:00\",\n            \"07:58:00\",\n            \"21:10:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"f4e4de7b-881d-4902-a005-0c248d3f8086\",\n        \"originStation\": \"Kutchmouth\",\n        \"destinationStation\": \"West Alison\",\n        \"departureTime\": \"12:18:00\",\n        \"arrivalTime\": \"06:48:00\",\n        \"interludeTimes\": [\n            \"05:52:00\",\n            \"16:54:00\",\n            \"02:07:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"568876df-d83a-41dd-8872-615ffe82120f\",\n        \"originStation\": \"New Lethahaven\",\n        \"destinationStation\": \"Torpside\",\n        \"departureTime\": \"19:37:00\",\n        \"arrivalTime\": \"12:59:00\",\n        \"interludeTimes\": [\n            \"17:55:00\",\n            \"14:00:00\",\n            \"19:47:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"6f29362f-9581-4474-8d45-6c0e8380be74\",\n        \"originStation\": \"Brittanyville\",\n        \"destinationStation\": \"Laurenburgh\",\n        \"departureTime\": \"01:20:00\",\n        \"arrivalTime\": \"13:28:00\",\n        \"interludeTimes\": [\n            \"02:43:00\",\n            \"22:05:00\",\n            \"19:27:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"81940d36-20a1-40bc-85c1-982737ae9050\",\n        \"originStation\": \"Fredrickport\",\n        \"destinationStation\": \"Willieport\",\n        \"departureTime\": \"02:15:00\",\n        \"arrivalTime\": \"02:38:00\",\n        \"interludeTimes\": [\n            \"15:39:00\",\n            \"19:40:00\",\n            \"21:18:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"8ff774c1-2c0a-431b-b6f7-5c2083844b25\",\n        \"originStation\": \"Feilside\",\n        \"destinationStation\": \"Annastad\",\n        \"departureTime\": \"08:09:00\",\n        \"arrivalTime\": \"10:11:00\",\n        \"interludeTimes\": [\n            \"02:00:00\",\n            \"16:51:00\",\n            \"02:03:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"928a5ed4-8190-4f21-af30-4c0f9c11b0ff\",\n        \"originStation\": \"Malikaborough\",\n        \"destinationStation\": \"East Jonas\",\n        \"departureTime\": \"20:26:00\",\n        \"arrivalTime\": \"20:44:00\",\n        \"interludeTimes\": [\n            \"05:36:00\",\n            \"21:21:00\",\n            \"14:28:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"e5b0845a-c28f-4125-ab88-6646e818d0c0\",\n        \"originStation\": \"Jeffryhaven\",\n        \"destinationStation\": \"North Kaitlyn\",\n        \"departureTime\": \"05:33:00\",\n        \"arrivalTime\": \"12:54:00\",\n        \"interludeTimes\": [\n            \"00:19:00\",\n            \"14:11:00\",\n            \"01:43:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"2e68699e-bd5d-49f8-bdac-0465dc59fec9\",\n        \"originStation\": \"Hagenesville\",\n        \"destinationStation\": \"New Dusty\",\n        \"departureTime\": \"21:50:00\",\n        \"arrivalTime\": \"02:25:00\",\n        \"interludeTimes\": [\n            \"22:28:00\",\n            \"00:15:00\",\n            \"17:59:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"462f3cfc-a7f3-42e9-a113-9d53efa41d3f\",\n        \"originStation\": \"Cronaberg\",\n        \"destinationStation\": \"North Cedrick\",\n        \"departureTime\": \"09:00:00\",\n        \"arrivalTime\": \"02:41:00\",\n        \"interludeTimes\": [\n            \"13:14:00\",\n            \"21:29:00\",\n            \"17:06:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"3ba072f1-278f-4d05-87a8-487c02711b02\",\n        \"originStation\": \"Lindgrenbury\",\n        \"destinationStation\": \"Andreborough\",\n        \"departureTime\": \"01:47:00\",\n        \"arrivalTime\": \"08:20:00\",\n        \"interludeTimes\": [\n            \"20:54:00\",\n            \"02:13:00\",\n            \"05:27:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"3bc85b7d-c7d6-487a-9af1-8991f2eb49db\",\n        \"originStation\": \"Carrollton\",\n        \"destinationStation\": \"East Jolie\",\n        \"departureTime\": \"11:37:00\",\n        \"arrivalTime\": \"18:45:00\",\n        \"interludeTimes\": [\n            \"09:25:00\",\n            \"14:24:00\",\n            \"09:49:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"810cd319-7fea-424e-9d31-1788ed68354a\",\n        \"originStation\": \"Emardmouth\",\n        \"destinationStation\": \"Port Kamryn\",\n        \"departureTime\": \"07:20:00\",\n        \"arrivalTime\": \"13:28:00\",\n        \"interludeTimes\": [\n            \"00:34:00\",\n            \"15:50:00\",\n            \"23:21:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"80d7b838-4375-4f41-a892-2ca972396ae1\",\n        \"originStation\": \"Kozeyborough\",\n        \"destinationStation\": \"Hodkiewiczburgh\",\n        \"departureTime\": \"13:51:00\",\n        \"arrivalTime\": \"02:34:00\",\n        \"interludeTimes\": [\n            \"22:09:00\",\n            \"17:07:00\",\n            \"08:09:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"992fc5b0-e4dc-41f5-b336-fb7ae2c72699\",\n        \"originStation\": \"Hammesshire\",\n        \"destinationStation\": \"Johnstonstad\",\n        \"departureTime\": \"12:28:00\",\n        \"arrivalTime\": \"00:51:00\",\n        \"interludeTimes\": [\n            \"11:16:00\",\n            \"19:15:00\",\n            \"05:07:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"f0472299-8c26-4a57-a318-19161486a17d\",\n        \"originStation\": \"Vickiemouth\",\n        \"destinationStation\": \"North Cedrickchester\",\n        \"departureTime\": \"04:27:00\",\n        \"arrivalTime\": \"04:53:00\",\n        \"interludeTimes\": [\n            \"08:10:00\",\n            \"09:02:00\",\n            \"01:58:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"8fc06469-f26c-494e-a43c-93a86a56c461\",\n        \"originStation\": \"South Elsie\",\n        \"destinationStation\": \"Lake Abraham\",\n        \"departureTime\": \"22:29:00\",\n        \"arrivalTime\": \"08:48:00\",\n        \"interludeTimes\": [\n            \"18:56:00\",\n            \"16:49:00\",\n            \"08:46:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"772bb279-fd4e-488a-ba9b-257fcc056954\",\n        \"originStation\": \"East Kirstinhaven\",\n        \"destinationStation\": \"Lonieview\",\n        \"departureTime\": \"05:27:00\",\n        \"arrivalTime\": \"07:43:00\",\n        \"interludeTimes\": [\n            \"13:01:00\",\n            \"07:16:00\",\n            \"12:07:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"d26b241c-fe5b-4cdb-8893-05cf2937f223\",\n        \"originStation\": \"Marianmouth\",\n        \"destinationStation\": \"Vernashire\",\n        \"departureTime\": \"20:12:00\",\n        \"arrivalTime\": \"06:22:00\",\n        \"interludeTimes\": [\n            \"10:36:00\",\n            \"03:30:00\",\n            \"13:22:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"de6d1061-ed21-409b-bc80-4cea39a409b0\",\n        \"originStation\": \"Genechester\",\n        \"destinationStation\": \"Jakubowskifort\",\n        \"departureTime\": \"04:44:00\",\n        \"arrivalTime\": \"01:22:00\",\n        \"interludeTimes\": [\n            \"01:09:00\",\n            \"11:21:00\",\n            \"23:57:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"7c37f4ce-fcfa-4e55-a3b9-9e2c45b13653\",\n        \"originStation\": \"Lake Sienna\",\n        \"destinationStation\": \"North Mattton\",\n        \"departureTime\": \"12:47:00\",\n        \"arrivalTime\": \"02:32:00\",\n        \"interludeTimes\": [\n            \"07:02:00\",\n            \"03:43:00\",\n            \"09:53:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"64a393ea-b9e4-4d8b-a1ab-bb12c91d9b0d\",\n        \"originStation\": \"Lake Franz\",\n        \"destinationStation\": \"Hintzborough\",\n        \"departureTime\": \"16:06:00\",\n        \"arrivalTime\": \"16:24:00\",\n        \"interludeTimes\": [\n            \"20:39:00\",\n            \"07:31:00\",\n            \"18:21:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"10500d1e-1883-4a3e-bf28-17a9e1049758\",\n        \"originStation\": \"North Raheem\",\n        \"destinationStation\": \"O'Konstad\",\n        \"departureTime\": \"11:46:00\",\n        \"arrivalTime\": \"12:20:00\",\n        \"interludeTimes\": [\n            \"08:37:00\",\n            \"23:59:00\",\n            \"10:04:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"46ba0a10-b5c8-41ec-9345-7bf7f32ea078\",\n        \"originStation\": \"West Hansburgh\",\n        \"destinationStation\": \"Jacobsonbury\",\n        \"departureTime\": \"20:46:00\",\n        \"arrivalTime\": \"02:20:00\",\n        \"interludeTimes\": [\n            \"19:26:00\",\n            \"05:48:00\",\n            \"20:02:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"82ea6dca-b2b2-4344-8b40-88ac731c0d3f\",\n        \"originStation\": \"North Beverly\",\n        \"destinationStation\": \"Lueilwitzshire\",\n        \"departureTime\": \"17:09:00\",\n        \"arrivalTime\": \"22:30:00\",\n        \"interludeTimes\": [\n            \"06:42:00\",\n            \"03:25:00\",\n            \"22:15:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"4e0aa7dc-2df0-4630-ba2b-d9fa1f4ca662\",\n        \"originStation\": \"Olsonbury\",\n        \"destinationStation\": \"Lake Michelle\",\n        \"departureTime\": \"08:55:00\",\n        \"arrivalTime\": \"16:21:00\",\n        \"interludeTimes\": [\n            \"23:15:00\",\n            \"16:24:00\",\n            \"22:50:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"f11ad231-eb28-4bcd-b65a-8c74156939eb\",\n        \"originStation\": \"Cruickshankstad\",\n        \"destinationStation\": \"Ardellaside\",\n        \"departureTime\": \"01:15:00\",\n        \"arrivalTime\": \"18:09:00\",\n        \"interludeTimes\": [\n            \"01:12:00\",\n            \"11:33:00\",\n            \"10:15:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"dc75894b-0daa-47aa-b273-f4bdd017f0f4\",\n        \"originStation\": \"Mathewmouth\",\n        \"destinationStation\": \"West Rydertown\",\n        \"departureTime\": \"07:07:00\",\n        \"arrivalTime\": \"12:32:00\",\n        \"interludeTimes\": [\n            \"02:10:00\",\n            \"00:00:00\",\n            \"08:10:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"cc0c5d5f-a8fd-4850-ade3-c09f9a0a6cdf\",\n        \"originStation\": \"South Mylesborough\",\n        \"destinationStation\": \"Hanebury\",\n        \"departureTime\": \"09:43:00\",\n        \"arrivalTime\": \"16:01:00\",\n        \"interludeTimes\": [\n            \"22:51:00\",\n            \"06:30:00\",\n            \"11:51:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"3ef16302-d366-4fbe-aee8-f46fe1cf7b9d\",\n        \"originStation\": \"Edwardfurt\",\n        \"destinationStation\": \"South Reid\",\n        \"departureTime\": \"18:05:00\",\n        \"arrivalTime\": \"12:33:00\",\n        \"interludeTimes\": [\n            \"06:07:00\",\n            \"22:17:00\",\n            \"20:12:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"4646d17b-947d-4ea4-93c0-1b3dd37a0c7f\",\n        \"originStation\": \"West Meagan\",\n        \"destinationStation\": \"Lake Travonshire\",\n        \"departureTime\": \"19:13:00\",\n        \"arrivalTime\": \"20:02:00\",\n        \"interludeTimes\": [\n            \"16:40:00\",\n            \"16:17:00\",\n            \"15:46:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"c82b317d-ab91-4469-8def-e253a9f033ab\",\n        \"originStation\": \"Tellyshire\",\n        \"destinationStation\": \"New Everettport\",\n        \"departureTime\": \"20:14:00\",\n        \"arrivalTime\": \"05:31:00\",\n        \"interludeTimes\": [\n            \"13:47:00\",\n            \"20:03:00\",\n            \"21:16:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"df542641-a931-46b1-9ed2-5f91a35a804e\",\n        \"originStation\": \"South Lennie\",\n        \"destinationStation\": \"North Mathildeville\",\n        \"departureTime\": \"10:53:00\",\n        \"arrivalTime\": \"15:22:00\",\n        \"interludeTimes\": [\n            \"05:39:00\",\n            \"09:33:00\",\n            \"13:46:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"bd3e4f83-0e8b-4eca-8faf-191ccb4ba187\",\n        \"originStation\": \"Malcolmtown\",\n        \"destinationStation\": \"Kovacekfort\",\n        \"departureTime\": \"05:28:00\",\n        \"arrivalTime\": \"08:41:00\",\n        \"interludeTimes\": [\n            \"05:34:00\",\n            \"07:35:00\",\n            \"12:43:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"97387937-c9bc-4521-a58d-fdd9e5312f10\",\n        \"originStation\": \"North Braden\",\n        \"destinationStation\": \"Lucindaton\",\n        \"departureTime\": \"17:38:00\",\n        \"arrivalTime\": \"22:16:00\",\n        \"interludeTimes\": [\n            \"00:25:00\",\n            \"11:09:00\",\n            \"15:56:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"879458e9-f84c-454b-80e7-35aba441bafb\",\n        \"originStation\": \"Lednershire\",\n        \"destinationStation\": \"Svenmouth\",\n        \"departureTime\": \"23:58:00\",\n        \"arrivalTime\": \"01:56:00\",\n        \"interludeTimes\": [\n            \"02:24:00\",\n            \"09:55:00\",\n            \"08:41:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"c76b4bbe-2074-49f2-84bf-6ec5ae145762\",\n        \"originStation\": \"Wayneport\",\n        \"destinationStation\": \"Toniport\",\n        \"departureTime\": \"00:55:00\",\n        \"arrivalTime\": \"02:21:00\",\n        \"interludeTimes\": [\n            \"08:31:00\",\n            \"22:27:00\",\n            \"12:14:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"89dbdd88-44b6-4e00-8b5e-4d9df3cf95c3\",\n        \"originStation\": \"Townemouth\",\n        \"destinationStation\": \"Larueview\",\n        \"departureTime\": \"18:23:00\",\n        \"arrivalTime\": \"15:54:00\",\n        \"interludeTimes\": [\n            \"05:40:00\",\n            \"13:23:00\",\n            \"12:44:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"21c069e3-6383-41ea-bb9c-2e6dd2c88e84\",\n        \"originStation\": \"West Odell\",\n        \"destinationStation\": \"Darrenfurt\",\n        \"departureTime\": \"17:12:00\",\n        \"arrivalTime\": \"12:11:00\",\n        \"interludeTimes\": [\n            \"01:32:00\",\n            \"08:43:00\",\n            \"01:57:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"90c5bf72-b515-416f-96f1-2d5cbe385722\",\n        \"originStation\": \"West Yessenia\",\n        \"destinationStation\": \"West Orlobury\",\n        \"departureTime\": \"05:31:00\",\n        \"arrivalTime\": \"13:53:00\",\n        \"interludeTimes\": [\n            \"11:45:00\",\n            \"16:04:00\",\n            \"14:39:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"4025f4a6-37e0-4641-811e-8ca583da7808\",\n        \"originStation\": \"Albertaside\",\n        \"destinationStation\": \"West Jimmy\",\n        \"departureTime\": \"01:34:00\",\n        \"arrivalTime\": \"06:47:00\",\n        \"interludeTimes\": [\n            \"00:16:00\",\n            \"21:54:00\",\n            \"11:59:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"ee826505-e146-4709-aec3-1f0286494752\",\n        \"originStation\": \"Hauckton\",\n        \"destinationStation\": \"New Madelynnburgh\",\n        \"departureTime\": \"05:36:00\",\n        \"arrivalTime\": \"06:58:00\",\n        \"interludeTimes\": [\n            \"05:49:00\",\n            \"03:52:00\",\n            \"00:00:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"8f591447-bc5f-41fe-ab08-3f78eb14cf2f\",\n        \"originStation\": \"Gileston\",\n        \"destinationStation\": \"Lake Nestorton\",\n        \"departureTime\": \"02:12:00\",\n        \"arrivalTime\": \"04:22:00\",\n        \"interludeTimes\": [\n            \"22:48:00\",\n            \"00:56:00\",\n            \"08:51:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"68e6d25c-6d57-47ea-bc21-6b3170524f95\",\n        \"originStation\": \"Angelineshire\",\n        \"destinationStation\": \"Streichfurt\",\n        \"departureTime\": \"21:10:00\",\n        \"arrivalTime\": \"10:13:00\",\n        \"interludeTimes\": [\n            \"20:24:00\",\n            \"16:24:00\",\n            \"05:31:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"37b62c16-1b9c-4f9f-9424-ac973fff60aa\",\n        \"originStation\": \"New Ward\",\n        \"destinationStation\": \"Port Timmothyshire\",\n        \"departureTime\": \"09:17:00\",\n        \"arrivalTime\": \"23:52:00\",\n        \"interludeTimes\": [\n            \"18:27:00\",\n            \"06:05:00\",\n            \"02:43:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"72be6ed4-e348-4ea8-8fc2-241ae056d188\",\n        \"originStation\": \"New Virginia\",\n        \"destinationStation\": \"New Altheaton\",\n        \"departureTime\": \"21:30:00\",\n        \"arrivalTime\": \"10:24:00\",\n        \"interludeTimes\": [\n            \"21:10:00\",\n            \"02:18:00\",\n            \"14:43:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"18e82644-0a5d-4b51-bad8-48cc74fc903a\",\n        \"originStation\": \"Wilhelmhaven\",\n        \"destinationStation\": \"Hoegershire\",\n        \"departureTime\": \"21:06:00\",\n        \"arrivalTime\": \"06:18:00\",\n        \"interludeTimes\": [\n            \"01:54:00\",\n            \"02:31:00\",\n            \"14:20:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"da3518ab-63a6-4236-b612-9d7bb4675ea0\",\n        \"originStation\": \"Goodwinview\",\n        \"destinationStation\": \"New Leda\",\n        \"departureTime\": \"19:43:00\",\n        \"arrivalTime\": \"06:08:00\",\n        \"interludeTimes\": [\n            \"12:41:00\",\n            \"11:39:00\",\n            \"06:33:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"219ba026-85ed-4543-9bfd-73ccb758464d\",\n        \"originStation\": \"Saigeburgh\",\n        \"destinationStation\": \"Port Bessieport\",\n        \"departureTime\": \"06:23:00\",\n        \"arrivalTime\": \"23:35:00\",\n        \"interludeTimes\": [\n            \"14:56:00\",\n            \"01:38:00\",\n            \"15:05:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"9afea662-6467-4be4-8294-f5b1f08e4c73\",\n        \"originStation\": \"North Joe\",\n        \"destinationStation\": \"Jordanemouth\",\n        \"departureTime\": \"04:03:00\",\n        \"arrivalTime\": \"21:27:00\",\n        \"interludeTimes\": [\n            \"19:22:00\",\n            \"13:22:00\",\n            \"00:17:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"2e81f8ec-a15f-4e9e-a25d-792d0dfdc7eb\",\n        \"originStation\": \"Tyreekhaven\",\n        \"destinationStation\": \"Janessaton\",\n        \"departureTime\": \"17:27:00\",\n        \"arrivalTime\": \"15:49:00\",\n        \"interludeTimes\": [\n            \"00:15:00\",\n            \"13:20:00\",\n            \"05:18:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"66e658ae-71f1-4fd0-9961-f8c6c6c14fd6\",\n        \"originStation\": \"Sunnybury\",\n        \"destinationStation\": \"Port Bonitaside\",\n        \"departureTime\": \"05:27:00\",\n        \"arrivalTime\": \"21:49:00\",\n        \"interludeTimes\": [\n            \"14:12:00\",\n            \"15:50:00\",\n            \"20:49:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"55941d20-5a5c-4011-910b-07c99d1d849c\",\n        \"originStation\": \"Ilenefort\",\n        \"destinationStation\": \"Lake Halle\",\n        \"departureTime\": \"07:30:00\",\n        \"arrivalTime\": \"05:09:00\",\n        \"interludeTimes\": [\n            \"09:06:00\",\n            \"12:54:00\",\n            \"10:27:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"fe7707bb-1631-43a9-ac0d-966502d28777\",\n        \"originStation\": \"Lake Charlenestad\",\n        \"destinationStation\": \"East Elsieview\",\n        \"departureTime\": \"20:25:00\",\n        \"arrivalTime\": \"09:14:00\",\n        \"interludeTimes\": [\n            \"00:17:00\",\n            \"00:29:00\",\n            \"00:07:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"dbb4ac07-b71c-45f3-a260-ba9f865cfeae\",\n        \"originStation\": \"Nelsonstad\",\n        \"destinationStation\": \"Ameliaberg\",\n        \"departureTime\": \"09:06:00\",\n        \"arrivalTime\": \"07:47:00\",\n        \"interludeTimes\": [\n            \"03:04:00\",\n            \"23:07:00\",\n            \"12:09:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"dd6102db-ad5d-495b-a52c-d2d658d53116\",\n        \"originStation\": \"East Antonetteland\",\n        \"destinationStation\": \"Cristland\",\n        \"departureTime\": \"04:44:00\",\n        \"arrivalTime\": \"03:03:00\",\n        \"interludeTimes\": [\n            \"05:15:00\",\n            \"23:41:00\",\n            \"02:55:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"84cda894-1538-446e-aeb4-fa3c5ce582ab\",\n        \"originStation\": \"East Cleofurt\",\n        \"destinationStation\": \"Lake Rhianna\",\n        \"departureTime\": \"05:55:00\",\n        \"arrivalTime\": \"08:05:00\",\n        \"interludeTimes\": [\n            \"14:11:00\",\n            \"12:55:00\",\n            \"19:50:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"0c2535c2-18a9-4795-bd7d-4b8ef1665997\",\n        \"originStation\": \"Myrlchester\",\n        \"destinationStation\": \"North Giovannymouth\",\n        \"departureTime\": \"08:56:00\",\n        \"arrivalTime\": \"06:38:00\",\n        \"interludeTimes\": [\n            \"14:04:00\",\n            \"13:14:00\",\n            \"17:08:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"410d556a-9a59-4581-a4d6-34975b37f655\",\n        \"originStation\": \"Gulgowskiberg\",\n        \"destinationStation\": \"Hazelville\",\n        \"departureTime\": \"18:29:00\",\n        \"arrivalTime\": \"02:37:00\",\n        \"interludeTimes\": [\n            \"23:27:00\",\n            \"10:46:00\",\n            \"15:22:00\"\n        ],\n        \"isActive\": true\n    },\n    {\n        \"id\": \"b7e5e333-15d5-4cec-9aed-6204bdff5bba\",\n        \"originStation\": \"New Bradlybury\",\n        \"destinationStation\": \"Boyerland\",\n        \"departureTime\": \"13:16:00\",\n        \"arrivalTime\": \"19:20:00\",\n        \"interludeTimes\": [\n            \"22:11:00\",\n            \"08:55:00\",\n            \"01:47:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"cccf11ba-94de-4e34-8a80-dde6dcde69a7\",\n        \"originStation\": \"Lake Tanya\",\n        \"destinationStation\": \"Araland\",\n        \"departureTime\": \"07:55:00\",\n        \"arrivalTime\": \"09:40:00\",\n        \"interludeTimes\": [\n            \"00:26:00\",\n            \"10:58:00\",\n            \"05:56:00\"\n        ],\n        \"isActive\": false\n    },\n    {\n        \"id\": \"6175a9ec-b9b1-411f-9695-f30e6bb2013c\",\n        \"originStation\": \"Alexandseddar\",\n        \"destinationStation\": \"Laksdde Luciea\",\n        \"departureTime\": \"14:30:00\",\n        \"arrivalTime\": \"16:30:00\",\n        \"interludeTimes\": [\n            \"14:45:00\",\n            \"15:15:00\"\n        ],\n        \"isActive\": true\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{MAIN_API_URL}}route-service/route/{{RouteID}}",
+					"host": [
+						"{{MAIN_API_URL}}route-service"
+					],
+					"path": [
+						"route",
+						"{{RouteID}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get by Id 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{MAIN_API_URL}}route-service/route/{{RouteID}}",
+							"host": [
+								"{{MAIN_API_URL}}route-service"
+							],
+							"path": [
+								"route",
+								"{{RouteID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Sep 2025 15:53:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "7bbee254-5aed-47e3"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9853ef7208c3b4ec-SCL"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"7f1162e7-d974-4419-94ad-fc14ff77e4dc\",\n    \"originStation\": \"South Camille\",\n    \"destinationStation\": \"Cummeratafurt\",\n    \"departureTime\": \"11:31:00\",\n    \"arrivalTime\": \"18:01:00\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update route",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"OriginStation\": \"Aguas Verdes\",\r\n    \"DestinationStation\": \"Gran via\",\r\n    \"DepartureTime\": \"12:30:00\",\r\n    \"ArrivalTime\": \"15:30:00\",\r\n    \"InterludeTimes\": [\"14:45:00\", \"15:15:00\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{MAIN_API_URL}}route-service/route/{{RouteID}}",
+					"host": [
+						"{{MAIN_API_URL}}route-service"
+					],
+					"path": [
+						"route",
+						"{{RouteID}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update route 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"OriginStation\": \"Aguas Verdes\",\r\n    \"DestinationStation\": \"Gran via\",\r\n    \"DepartureTime\": \"12:30:00\",\r\n    \"ArrivalTime\": \"15:30:00\",\r\n    \"InterludeTimes\": [\"14:45:00\", \"15:15:00\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{MAIN_API_URL}}route-service/route/{{RouteID}}",
+							"host": [
+								"{{MAIN_API_URL}}route-service"
+							],
+							"path": [
+								"route",
+								"{{RouteID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Sep 2025 15:54:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "d011c6c1-b5e5-46e3"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9853f0db5e8eb4ec-SCL"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"7f1162e7-d974-4419-94ad-fc14ff77e4dc\",\n    \"originStation\": \"Aguas Verdes\",\n    \"destinationStation\": \"Gran via\",\n    \"departureTime\": \"12:30:00\",\n    \"arrivalTime\": \"15:30:00\",\n    \"interludeTimes\": [\n        \"14:45:00\",\n        \"15:15:00\"\n    ],\n    \"isActive\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete route (soft delete)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWT_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{MAIN_API_URL}}route-service/route/{{RouteID}}",
+					"host": [
+						"{{MAIN_API_URL}}route-service"
+					],
+					"path": [
+						"route",
+						"{{RouteID}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete route (soft delete) 200",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{MAIN_API_URL}}route-service/route/{{RouteID}}",
+							"host": [
+								"{{MAIN_API_URL}}route-service"
+							],
+							"path": [
+								"route",
+								"{{RouteID}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 26 Sep 2025 15:55:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3=\":443\"; ma=86400"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "x-render-origin-server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "rndr-id",
+							"value": "d1313e9d-d472-4b05"
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9853f1914934b4ec-SCL"
+						}
+					],
+					"cookie": [],
+					"body": "Route deleted successfully."
+				}
+			]
+		}
+	]
+}
