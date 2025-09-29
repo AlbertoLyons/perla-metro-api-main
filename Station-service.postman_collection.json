@@ -13,7 +13,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{MAIN_API_URL}}station-service/public/stations/2",
+					"raw": "{{MAIN_API_URL}}station-service/public/stations/{{id}}",
 					"host": [
 						"{{MAIN_API_URL}}station-service"
 					],
@@ -68,7 +68,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{MAIN_API_URL}}station-service/public/stations/8",
+					"raw": "{{MAIN_API_URL}}station-service/public/stations/{{id}}",
 					"host": [
 						"{{MAIN_API_URL}}station-service"
 					],
@@ -87,7 +87,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{MAIN_API_URL}}station-service/public/stations/10",
+					"raw": "{{MAIN_API_URL}}station-service/public/stations/{{id}}",
 					"host": [
 						"{{MAIN_API_URL}}station-service"
 					],
